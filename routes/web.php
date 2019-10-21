@@ -16,7 +16,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
  Route::group(['middleware' => ['auth','admin']], function () {
     
-    Route::any('/admin', function () {
+    Route::any('/dashboard', function () {
         return view('admin.dashboard');
     }); 
+     Route::get('/role-register','Admin\DashboardController@index');
  });
