@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    Dashboard | Admin panel
+    Registered Entries | Admin panel
 @endsection
 
 @section('content')
@@ -19,20 +19,24 @@
                                 <thead class="text-primary">
                                     <th>Name</th>
                                     <th>Phone</th>
-                                    <th>city</th>
-                                    <th>address</th>
-                                    <th>pin code</th>
+                                    <th>Email</th>
+                                    <th>usertype</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
                                 </thead>
                             </tbody>
-                            <tr>
-                                <td>test_1</td>
-                                <td>test_2</td>
-                                <td>test_3</td>
-                                <td>test_4</td>
-                                <td>test_5</td>
+                            @foreach ($users as $item)
                                 
+                            <tr>
+                                <td>{{ $item->name }}</td>
+                                <td>{{ $item->phone }}</td>
+                                <td>{{ $item->email }}</td>
+                                <td>-{{ $item->usertype }}</td>
+                                <td><a href="#" class="btn btn-warning">Edit</a></td>
+                                <td><a href="#" class="btn btn-danger">Delete</a></td>
                                 
                             </tr>
+                            @endforeach
                         </table>
                     </div>
                 </div>

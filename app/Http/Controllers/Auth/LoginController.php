@@ -32,7 +32,7 @@ class LoginController extends Controller
         if (Auth::User()->usertype == "admin")
         {
             
-            return "admin";
+            return "/dashboard";
         } 
         else {
             return "/home";
